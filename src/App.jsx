@@ -48,8 +48,6 @@ function App() {
   ]
 
   const Marquee = ({ items, reverse = false }) => {
-    // Repeat the items several times so there is always
-    // content covering the entire screen.
     const repeatedItems = Array(4).fill(items).flat()
 
     const renderItems = () =>
@@ -70,7 +68,11 @@ function App() {
 
     return (
       <div className="marquee">
-        <div className={`marquee-track ${reverse ? 'reverse' : ''}`}>
+        <div
+          className={`marquee-track ${
+            reverse ? 'reverse' : ''
+          }`}
+        >
           <div className="marquee-group">
             {renderItems()}
           </div>
@@ -85,10 +87,29 @@ function App() {
 
   return (
     <main>
+
+      {/* Hero */}
+
+      <section className="hero">
+        <div className="hero-content">
+
+          <h1>Kramz</h1>
+
+          <div className="construction">
+            <span className="status-dot"></span>
+            <span>Under Construction Website</span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Technology Marquees */}
+
       <section className="tech-section">
         <Marquee items={languages} />
         <Marquee items={technologies} reverse />
       </section>
+
     </main>
   )
 }

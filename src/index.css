@@ -1,8 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: #080808;
+  color: #ffffff;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   SUBTLE GRID BACKGROUND
+========================= */
+
+body::before {
+  content: '';
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 80%
+  );
+
+  z-index: -2;
+}
+
+/* =========================
+   SOFT CENTER GLOW
+========================= */
+
+body::after {
+  content: '';
+
+  position: fixed;
+
+  width: 700px;
+  height: 700px;
+
+  top: -250px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 100, 255, 0.08) 0%,
+    rgba(100, 100, 255, 0.035) 35%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+#root {
+  min-height: 100vh;
 }

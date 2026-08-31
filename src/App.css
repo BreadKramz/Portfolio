@@ -5,12 +5,97 @@
 main {
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: transparent;
 }
 
 .tech-section {
   width: 100%;
   overflow: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: 100%;
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 20px 80px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   KRAMZ
+========================= */
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(5rem, 15vw, 12rem);
+
+  font-weight: 700;
+
+  letter-spacing: -0.08em;
+
+  line-height: 0.9;
+
+  color: #ffffff;
+}
+
+/* =========================
+   CONSTRUCTION STATUS
+========================= */
+
+.construction {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: #888;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.02em;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #f7c948;
+
+  box-shadow:
+    0 0 10px rgba(247, 201, 72, 0.5);
+
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* =========================
