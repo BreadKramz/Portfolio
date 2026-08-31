@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.tech-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================
+   MARQUEE
+========================= */
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: #050505;
+
+  padding: 18px 0;
+
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* =========================
+   EDGE FADE
+========================= */
+
+.marquee::before,
+.marquee::after {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 120px;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    #050505,
+    transparent
+  );
+}
+
+.marquee::after {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    #050505,
+    transparent
+  );
+}
+
+/* =========================
+   TRACK
+========================= */
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+
+  animation: marquee-left 100s linear infinite;
+
+  will-change: transform;
+}
+
+.marquee-track.reverse {
+  animation: marquee-right 115s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* =========================
+   TECHNOLOGY ITEM
+========================= */
+
+.tech-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 38px;
+
+  color: #d4d4d4;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  letter-spacing: 0.01em;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* separator */
+
+.tech-item::after {
+  content: '';
+
+  position: absolute;
+
+  right: 0;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #333;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.7rem;
+
+  opacity: 0.9;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+.tech-name {
+  color: inherit;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.tech-item:hover {
+  color: #fff;
+
+  transform: translateY(-1px);
+}
+
+.tech-item:hover .tech-icon {
+  opacity: 1;
+
+  transform: scale(1.15);
+}
+
+/* =========================
+   LANGUAGE COLORS
+========================= */
+
+.javascript .tech-icon {
+  color: #f7df1e;
+}
+
+.java .tech-icon {
+  color: #f89820;
+}
+
+.php .tech-icon {
+  color: #777bb4;
+}
+
+.python .tech-icon {
+  color: #3776ab;
+}
+
+.c .tech-icon {
+  color: #659ad2;
+}
+
+.cpp .tech-icon {
+  color: #00599c;
+}
+
+.sql .tech-icon {
+  color: #4479a1;
+}
+
+/* =========================
+   TECHNOLOGY COLORS
+========================= */
+
+.react .tech-icon {
+  color: #61dafb;
+}
+
+.laravel .tech-icon {
+  color: #ff2d20;
+}
+
+.symfony .tech-icon {
+  color: #fff;
+}
+
+.node .tech-icon {
+  color: #68a063;
+}
+
+.tailwind .tech-icon {
+  color: #38bdf8;
+}
+
+.supabase .tech-icon {
+  color: #3ecf8e;
+}
+
+.docker .tech-icon {
+  color: #2496ed;
+}
+
+.git .tech-icon {
+  color: #f05032;
+}
+
+.github .tech-icon {
+  color: #fff;
+}
+
+.vite .tech-icon {
+  color: #646cff;
+}
+
+/* =========================
+   INFINITE ANIMATION
+========================= */
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .marquee {
+    padding: 16px 0;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    width: 60px;
+  }
+
+  .tech-item {
+    gap: 10px;
+
+    padding: 0 25px;
+
+    font-size: 0.9rem;
+  }
+
+  .tech-icon {
+    font-size: 1.5rem;
+  }
+}
