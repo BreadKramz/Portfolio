@@ -123,7 +123,7 @@ function App() {
             PORTFOLIO / 2026
           </div>
 
-          <h1>Kramz</h1>
+          <h1>BreadKramz</h1>
 
           <div className="construction">
             <span className="status-dot"></span>
