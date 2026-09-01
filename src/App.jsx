@@ -48,13 +48,11 @@ function App() {
   ]
 
   const Marquee = ({ items, reverse = false }) => {
-    const repeatedItems = Array(4).fill(items).flat()
-
-    const renderItems = () =>
-      repeatedItems.map((item, index) => (
+    const renderItems = (group) =>
+      items.map((item, index) => (
         <div
           className={`tech-item ${item.className}`}
-          key={`${item.name}-${index}`}
+          key={`${group}-${item.name}-${index}`}
         >
           <span className="tech-icon">
             {item.icon}
@@ -74,11 +72,11 @@ function App() {
           }`}
         >
           <div className="marquee-group">
-            {renderItems()}
+            {renderItems('first')}
           </div>
 
           <div className="marquee-group">
-            {renderItems()}
+            {renderItems('second')}
           </div>
         </div>
       </div>
@@ -88,27 +86,225 @@ function App() {
   return (
     <main>
 
-      {/* Hero */}
+      {/* =========================
+          HEADER
+      ========================= */}
 
-      <section className="hero">
+      <header className="header">
+        <div className="header-container">
+
+          <a href="#home" className="logo">
+            KRAMZ
+          </a>
+
+          <nav className="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+        </div>
+      </header>
+
+
+      {/* =========================
+          HERO
+      ========================= */}
+
+      <section
+        className="hero"
+        id="home"
+      >
         <div className="hero-content">
+
+          <div className="hero-label">
+            <span></span>
+            PORTFOLIO / 2026
+          </div>
 
           <h1>Kramz</h1>
 
           <div className="construction">
             <span className="status-dot"></span>
-            <span>Under Construction Website</span>
+
+            <span>
+              Under Construction Website
+            </span>
+          </div>
+
+          <div className="hero-scroll">
+            <span>SCROLL TO EXPLORE</span>
+            <div className="scroll-line"></div>
           </div>
 
         </div>
       </section>
 
-      {/* Technology Marquees */}
+
+      {/* =========================
+          TECHNOLOGIES
+      ========================= */}
 
       <section className="tech-section">
+
+        <div className="section-meta">
+          <span>01</span>
+          <span>LANGUAGES</span>
+        </div>
+
         <Marquee items={languages} />
-        <Marquee items={technologies} reverse />
+
+        <div className="section-meta second-meta">
+          <span>02</span>
+          <span>TECHNOLOGIES</span>
+        </div>
+
+        <Marquee
+          items={technologies}
+          reverse
+        />
+
       </section>
+
+
+      {/* =========================
+          ABOUT
+      ========================= */}
+
+      <section
+        id="about"
+        className="content-section"
+      >
+
+        <div className="section-heading">
+
+          <div className="section-number">
+            03
+          </div>
+
+          <div>
+            <span className="section-kicker">
+              ABOUT
+            </span>
+
+            <h2>
+              Building things
+              <br />
+              <span>one line at a time.</span>
+            </h2>
+          </div>
+
+        </div>
+
+        <div className="section-detail">
+          <span></span>
+          <p>
+            A computer science student exploring
+            software development, web technologies,
+            and everything in between.
+          </p>
+        </div>
+
+      </section>
+
+
+      {/* =========================
+          PROJECTS
+      ========================= */}
+
+      <section
+        id="projects"
+        className="content-section projects-section"
+      >
+
+        <div className="section-heading">
+
+          <div className="section-number">
+            04
+          </div>
+
+          <div>
+            <span className="section-kicker">
+              PROJECTS
+            </span>
+
+            <h2>
+              Things I've
+              <br />
+              <span>built.</span>
+            </h2>
+          </div>
+
+        </div>
+
+        <div className="coming-soon">
+          <span className="coming-dot"></span>
+          PROJECTS COMING SOON
+        </div>
+
+      </section>
+
+
+      {/* =========================
+          CONTACT
+      ========================= */}
+
+      <section
+        id="contact"
+        className="content-section contact-section"
+      >
+
+        <div className="section-heading">
+
+          <div className="section-number">
+            05
+          </div>
+
+          <div>
+            <span className="section-kicker">
+              CONTACT
+            </span>
+
+            <h2>
+              Let's build
+              <br />
+              <span>something.</span>
+            </h2>
+          </div>
+
+        </div>
+
+        <a
+          href="mailto:hello@kramz.dev"
+          className="contact-link"
+        >
+          GET IN TOUCH
+          <span>↗</span>
+        </a>
+
+      </section>
+
+
+      {/* =========================
+          FOOTER
+      ========================= */}
+
+      <footer className="footer">
+
+        <span>
+          © 2026 KRAMZ
+        </span>
+
+        <span>
+          BUILT WITH REACT
+        </span>
+
+        <span>
+          PHILIPPINES
+        </span>
+
+      </footer>
 
     </main>
   )
