@@ -8,11 +8,6 @@ main {
   background: transparent;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 .header {
   position: fixed;
 
@@ -48,11 +43,6 @@ main {
   -webkit-backdrop-filter: blur(14px);
 }
 
-
-/* =========================
-   LOGO
-========================= */
-
 .logo {
   color: #ffffff;
 
@@ -70,11 +60,6 @@ main {
 .logo:hover {
   opacity: 0.6;
 }
-
-
-/* =========================
-   NAVIGATION
-========================= */
 
 .nav {
   display: flex;
@@ -128,11 +113,6 @@ main {
   transform-origin: left;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero {
   width: 100%;
 
@@ -156,11 +136,6 @@ main {
 
   align-items: center;
 }
-
-
-/* =========================
-   HERO LABEL
-========================= */
 
 .hero-label {
   display: flex;
@@ -190,11 +165,6 @@ main {
   background: #ffffff;
 }
 
-
-/* =========================
-   KRAMZ
-========================= */
-
 .hero h1 {
   margin: 0;
 
@@ -213,11 +183,6 @@ main {
 
   color: #ffffff;
 }
-
-
-/* =========================
-   CONSTRUCTION
-========================= */
 
 .construction {
   display: flex;
@@ -270,11 +235,6 @@ main {
 
 }
 
-
-/* =========================
-   HERO SCROLL
-========================= */
-
 .hero-scroll {
   display: flex;
 
@@ -306,11 +266,6 @@ main {
     );
 }
 
-
-/* =========================
-   TECHNOLOGY SECTION
-========================= */
-
 .tech-section {
   width: 100%;
 
@@ -319,11 +274,6 @@ main {
   border-top:
     1px solid #151515;
 }
-
-
-/* =========================
-   SECTION META
-========================= */
 
 .section-meta {
   width: 100%;
@@ -385,11 +335,6 @@ main {
     1px solid #151515;
 }
 
-
-/* =========================
-   MARQUEE
-========================= */
-
 .marquee {
   position: relative;
 
@@ -404,11 +349,6 @@ main {
   border-bottom:
     1px solid #1a1a1a;
 }
-
-
-/* =========================
-   EDGE FADE
-========================= */
 
 .marquee::before,
 .marquee::after {
@@ -448,11 +388,6 @@ main {
     );
 }
 
-
-/* =========================
-   TRACK
-========================= */
-
 .marquee-track {
   display: flex;
 
@@ -480,11 +415,6 @@ main {
 
   flex-shrink: 0;
 }
-
-
-/* =========================
-   TECHNOLOGY ITEM
-========================= */
 
 .tech-item {
   position: relative;
@@ -530,11 +460,6 @@ main {
   background: #333333;
 }
 
-
-/* =========================
-   ICON
-========================= */
-
 .tech-icon {
   display: flex;
 
@@ -555,11 +480,6 @@ main {
   color: inherit;
 }
 
-
-/* =========================
-   HOVER
-========================= */
-
 .tech-item:hover {
   color: #ffffff;
 
@@ -573,11 +493,6 @@ main {
   transform:
     scale(1.15);
 }
-
-
-/* =========================
-   LANGUAGE COLORS
-========================= */
 
 .javascript .tech-icon {
   color: #f7df1e;
@@ -606,11 +521,6 @@ main {
 .sql .tech-icon {
   color: #4479a1;
 }
-
-
-/* =========================
-   TECHNOLOGY COLORS
-========================= */
 
 .react .tech-icon {
   color: #61dafb;
@@ -652,11 +562,6 @@ main {
   color: #646cff;
 }
 
-
-/* =========================
-   MARQUEE ANIMATION
-========================= */
-
 @keyframes marquee-left {
 
   from {
@@ -685,11 +590,6 @@ main {
 
 }
 
-
-/* =========================
-   CONTENT SECTIONS
-========================= */
-
 .content-section {
   position: relative;
 
@@ -708,11 +608,6 @@ main {
   border-bottom:
     1px solid #151515;
 }
-
-
-/* =========================
-   SECTION HEADING
-========================= */
 
 .section-heading {
   display: flex;
@@ -768,11 +663,6 @@ main {
   color: #444444;
 }
 
-
-/* =========================
-   SECTION DETAIL
-========================= */
-
 .section-detail {
   display: flex;
 
@@ -806,11 +696,6 @@ main {
 
   line-height: 1.8;
 }
-
-
-/* =========================
-   PROJECTS
-========================= */
 
 .projects-section {
   min-height: 70vh;
@@ -850,11 +735,6 @@ main {
       0.4
     );
 }
-
-
-/* =========================
-   CONTACT
-========================= */
 
 .contact-section {
   min-height: 75vh;
@@ -899,11 +779,6 @@ main {
   font-size: 1rem;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 .footer {
   width: 100%;
 
@@ -927,11 +802,6 @@ main {
   border-top:
     1px solid #151515;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 
@@ -1064,11 +934,6 @@ main {
   }
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media (max-width: 480px) {
 
   .header {
@@ -1126,11 +991,6 @@ main {
   }
 
 }
-
-
-/* =========================
-   REDUCED MOTION
-========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
