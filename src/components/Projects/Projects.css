@@ -1,0 +1,17 @@
+.projects__coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555555;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.projects__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f7c948;
+  box-shadow: 0 0 8px rgba(247, 201, 72, 0.4);
+}

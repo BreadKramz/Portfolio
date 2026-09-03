@@ -1,0 +1,145 @@
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #050505;
+  padding: 18px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #050505, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #050505, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 100s linear infinite;
+  will-change: transform;
+}
+
+.marquee__track--reverse {
+  animation: marquee-right 115s linear infinite;
+}
+
+.marquee__group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 38px;
+  color: #d4d4d4;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.marquee__item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.marquee__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.marquee__name {
+  color: inherit;
+}
+
+.marquee__item:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.marquee__item:hover .marquee__icon {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Language icon colors */
+.lang-js .marquee__icon     { color: #f7df1e; }
+.lang-java .marquee__icon   { color: #f89820; }
+.lang-php .marquee__icon    { color: #777bb4; }
+.lang-python .marquee__icon { color: #3776ab; }
+.lang-c .marquee__icon      { color: #659ad2; }
+.lang-cpp .marquee__icon    { color: #00599c; }
+.lang-sql .marquee__icon    { color: #4479a1; }
+
+/* Technology icon colors */
+.tech-react .marquee__icon    { color: #61dafb; }
+.tech-laravel .marquee__icon  { color: #ff2d20; }
+.tech-symfony .marquee__icon  { color: #ffffff; }
+.tech-node .marquee__icon     { color: #68a063; }
+.tech-tailwind .marquee__icon { color: #38bdf8; }
+.tech-supabase .marquee__icon { color: #3ecf8e; }
+.tech-docker .marquee__icon   { color: #2496ed; }
+.tech-git .marquee__icon      { color: #f05032; }
+.tech-github .marquee__icon   { color: #ffffff; }
+.tech-vite .marquee__icon     { color: #646cff; }
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .marquee {
+    padding: 16px 0;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    width: 60px;
+  }
+
+  .marquee__item {
+    gap: 10px;
+    padding: 0 25px;
+    font-size: 0.9rem;
+  }
+
+  .marquee__icon {
+    font-size: 1.5rem;
+  }
+}
