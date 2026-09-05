@@ -1,3 +1,4 @@
+import { profile } from '../../data/profile'
 import './Hero.css'
 
 function Hero() {
@@ -9,11 +10,32 @@ function Hero() {
           PORTFOLIO / 2026
         </div>
 
-        <h1 className="hero__title">BreadKramz</h1>
+        <h1 className="hero__title">
+          {profile.handle}
+          <span className="hero__title-dot">.</span>
+        </h1>
+
+        <p className="hero__subtitle">
+          {profile.role}
+        </p>
+
+        <p className="hero__tagline">
+          {profile.tagline}
+        </p>
 
         <div className="hero__construction">
           <span className="hero__status-dot"></span>
-          <span>Under Construction Website</span>
+          <span>Open to internships and junior roles</span>
+        </div>
+
+        <div className="hero__cta">
+          <a href="#projects" className="hero__cta-primary">
+            View Projects
+            <span>↓</span>
+          </a>
+          <a href="#contact" className="hero__cta-secondary">
+            Get in Touch
+          </a>
         </div>
 
         <div className="hero__scroll">
