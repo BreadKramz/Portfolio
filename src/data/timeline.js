@@ -20,10 +20,10 @@ export const education = [
   },
   {
     type: 'edu',
-    role: 'Senior High School — STEM',
-    org: 'Philippine High School (placeholder)',
-    period: '2020 — 2022',
+    role: 'Senior High School — STEAM',
+    org: 'Silliman University',
+    period: '2021 — 2023',
     description:
-      'Graduated with honors. Took the IT track and built my first web project, a static site for a school organization.',
+      'Completed the STEAM (Science, Technology, Engineering, Agriculture,and Mathematics) track with distinction. Graduated with High Honors in recognition of academic excellence and consistent performance.',
   },
 ]
