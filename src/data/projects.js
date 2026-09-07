@@ -12,6 +12,7 @@ import {
   FaGithub,
   FaChurch,
   FaCode,
+  FaHtml5,
 } from 'react-icons/fa'
 import { SiTailwindcss, SiSupabase, SiVite, SiMysql, SiCplusplus } from 'react-icons/si'
 
@@ -20,9 +21,9 @@ export const projects = [
     title: 'OMP Church',
     description:
       'A website for our church community. Built to share announcements, schedules, and resources with members online.',
-    stack: ['React', 'Vite', 'Tailwind CSS'],
+    stack: ['React', 'JavaScript', 'Tailwind CSS'],
     role: 'Solo Developer',
-    year: '2025',
+    year: '2025-2026',
     status: 'Live',
     icon: FaChurch,
     accent: 'project-accent-1',
@@ -33,25 +34,14 @@ export const projects = [
     title: 'Computer Science Organization',
     description:
       'A site for our university CS organization. Showcases events, members, and resources for students joining the org.',
-    stack: ['React', 'Vite', 'Tailwind CSS'],
+    stack: ['HTML', 'JavaScript', 'Tailwind CSS'],
     role: 'Solo Developer',
-    year: '2025',
+    year: '2025-2026',
     status: 'Live',
     icon: FaCode,
     accent: 'project-accent-2',
     demo: 'https://computer-science-organization.vercel.app/',
     repo: 'https://github.com/BreadKramz/Computer-Science-Organization.git',
-  },
-  {
-    title: 'Kramz Notes',
-    description:
-      'A minimalist markdown note-taking app with tags, search, and dark mode. Built for speed and keyboard-first workflows.',
-    stack: ['React', 'Supabase', 'Vite'],
-    role: 'Solo Developer',
-    year: '2025',
-    status: 'In progress',
-    icon: FaReact,
-    accent: 'project-accent-3',
   },
   {
     title: 'Personal Site',
@@ -83,6 +73,7 @@ export const projectStackIcons = {
   Supabase: SiSupabase,
   Vite: SiVite,
   MySQL: SiMysql,
+  HTML: FaHtml5,
   Bootstrap: FaReact,
   CSS: FaReact,
   Express: FaNodeJs,

@@ -1,12 +1,10 @@
-import { FaJs, FaJava, FaPhp, FaPython } from 'react-icons/fa'
-import { SiC, SiCplusplus, SiMysql } from 'react-icons/si'
+import { FaJs, FaPhp, FaHtml5, FaCss3 } from 'react-icons/fa'
+import { SiCplusplus } from 'react-icons/si'
 
 export const languages = [
+  { name: 'HTML', icon: FaHtml5, className: 'lang-html' },
+  { name: 'CSS', icon: FaCss3, className: 'lang-css' },
   { name: 'JavaScript', icon: FaJs, className: 'lang-js' },
-  { name: 'Java', icon: FaJava, className: 'lang-java' },
-  { name: 'PHP', icon: FaPhp, className: 'lang-php' },
-  { name: 'Python', icon: FaPython, className: 'lang-python' },
-  { name: 'C', icon: SiC, className: 'lang-c' },
   { name: 'C++', icon: SiCplusplus, className: 'lang-cpp' },
-  { name: 'SQL', icon: SiMysql, className: 'lang-sql' },
+  { name: 'PHP', icon: FaPhp, className: 'lang-php' },
 ]

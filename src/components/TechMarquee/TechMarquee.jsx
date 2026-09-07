@@ -12,21 +12,19 @@ function TechItem({ name, icon: Icon, className }) {
 }
 
 function TechMarquee({ items, reverse = false }) {
-  const renderGroup = (groupKey) =>
-    items.map((item, index) => (
-      <TechItem
-        key={`${groupKey}-${item.name}-${index}`}
-        name={item.name}
-        icon={item.icon}
-        className={item.className}
-      />
-    ))
+  const duplicated = [...items, ...items]
 
   return (
     <div className="marquee">
       <div className={`marquee__track ${reverse ? 'marquee__track--reverse' : ''}`}>
-        <div className="marquee__group">{renderGroup('first')}</div>
-        <div className="marquee__group" aria-hidden="true">{renderGroup('second')}</div>
+        {duplicated.map((item, index) => (
+          <TechItem
+            key={`${item.name}-${index}`}
+            name={item.name}
+            icon={item.icon}
+            className={item.className}
+          />
+        ))}
       </div>
     </div>
   )

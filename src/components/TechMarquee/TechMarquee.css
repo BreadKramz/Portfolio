@@ -29,19 +29,14 @@
 }
 
 .marquee__track {
-  display: flex;
-  width: max-content;
-  animation: marquee-left 100s linear infinite;
+  display: inline-flex;
+  align-items: center;
+  animation: marquee-left 30s linear infinite;
   will-change: transform;
 }
 
 .marquee__track--reverse {
-  animation: marquee-right 115s linear infinite;
-}
-
-.marquee__group {
-  display: flex;
-  flex-shrink: 0;
+  animation: marquee-right 60s linear infinite;
 }
 
 .marquee__item {
@@ -93,34 +88,34 @@
 }
 
 /* Language icon colors */
-.lang-js .marquee__icon     { color: #f7df1e; }
-.lang-java .marquee__icon   { color: #f89820; }
-.lang-php .marquee__icon    { color: #777bb4; }
-.lang-python .marquee__icon { color: #3776ab; }
-.lang-c .marquee__icon      { color: #659ad2; }
-.lang-cpp .marquee__icon    { color: #00599c; }
-.lang-sql .marquee__icon    { color: #4479a1; }
+.lang-html .marquee__icon { color: #e34c26; }
+.lang-css  .marquee__icon { color: #2877d9; }
+.lang-js   .marquee__icon { color: #f7df1e; }
+.lang-cpp  .marquee__icon { color: #00599c; }
+.lang-php  .marquee__icon { color: #777bb4; }
 
 /* Technology icon colors */
-.tech-react .marquee__icon    { color: #61dafb; }
-.tech-laravel .marquee__icon  { color: #ff2d20; }
-.tech-symfony .marquee__icon  { color: #ffffff; }
-.tech-node .marquee__icon     { color: #68a063; }
-.tech-tailwind .marquee__icon { color: #38bdf8; }
-.tech-supabase .marquee__icon { color: #3ecf8e; }
-.tech-docker .marquee__icon   { color: #2496ed; }
-.tech-git .marquee__icon      { color: #f05032; }
-.tech-github .marquee__icon   { color: #ffffff; }
-.tech-vite .marquee__icon     { color: #646cff; }
+.tech-xampp     .marquee__icon { color: #f45b00; }
+.tech-firebase  .marquee__icon { color: #f5a623; }
+.tech-supabase  .marquee__icon { color: #3ecf8e; }
+.tech-ngrok     .marquee__icon { color: #8e44ad; }
+.tech-laravel   .marquee__icon { color: #ff2d20; }
+.tech-react     .marquee__icon { color: #61dafb; }
+.tech-symfony   .marquee__icon { color: #ffffff; }
+.tech-python    .marquee__icon { color: #3776ab; }
+.tech-java      .marquee__icon { color: #f89820; }
+.tech-docker    .marquee__icon { color: #2496ed; }
+.tech-git       .marquee__icon { color: #f05032; }
+.tech-github    .marquee__icon { color: #ffffff; }
 
 @keyframes marquee-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes marquee-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 @media (max-width: 768px) {
