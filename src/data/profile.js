@@ -5,11 +5,9 @@ export const profile = {
   location: 'Philippines',
   year: '4th Year',
   tagline: 'Learning in public. Building one project at a time.',
-  bio: `I'm a 4th-year Computer Science student who loves building web applications and learning how things work under the hood. I work across the stack, from front-ends to back-ends and databases, and I'm always looking for new things to pick up.
+  bio: `I'm a 4th-year Computer Science student aspiring to become a software engineer. I enjoy learning about technology, solving problems, and building things that turn ideas into something real. I'm always curious about how software works and enjoy exploring new concepts and technologies to improve my skills.
 
-Lately I've been getting into game development. I want to build my own game someday, so I've been exploring engines like Unity and Godot, messing with shaders, and studying how games are actually designed. Nothing there yet, but it's what I'm most excited to grow into.
-
-My main focus right now is full-stack web development with React and Laravel. I like writing code other people can read and creating websites that work, even when they're small.`,
+Outside of programming, I'm a big fan of gaming. I've always been interested in how games are created, from the programming and mechanics to the overall design and experience. One of my goals is to eventually create a game of my own, and I'm excited to keep learning and working toward making that goal a reality.`,
   highlights: [
     { label: 'Years coding', value: '4+' },
     { label: 'Projects shipped', value: '12' },

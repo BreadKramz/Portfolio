@@ -6,28 +6,34 @@
 }
 
 .section-heading__kicker {
-  color: #555555;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  color: #646cff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 .section-heading__title {
-  margin-top: 8px;
+  margin-top: 0;
   color: #ffffff;
   font-size: clamp(3rem, 8vw, 8rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.07em;
 }
 
 .section-heading__title span {
-  color: #444444;
+  color: #646cff;
 }
 
 @media (max-width: 768px) {
+  .section-heading__kicker {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+  }
+
   .section-heading__title {
-    margin-top: 6px;
     font-size: clamp(3rem, 13vw, 6rem);
   }
 }

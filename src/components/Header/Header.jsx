@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './Header.css'
 
 const navLinks = [
@@ -8,9 +9,18 @@ const navLinks = [
 ]
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <header className="header">
-      <div className="header__container">
+      <div className={`header__container${scrolled ? ' scrolled' : ''}`}>
         <a href="#home" className="header__logo">
           KRAMZ
         </a>

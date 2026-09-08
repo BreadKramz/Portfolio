@@ -3,12 +3,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 30px;
+  padding: 28px 30px;
   color: #3f3f3f;
   font-size: 0.55rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   border-top: 1px solid #151515;
+  background: rgba(8, 8, 8, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.footer a {
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {

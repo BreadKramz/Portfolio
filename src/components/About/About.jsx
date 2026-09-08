@@ -12,6 +12,10 @@ function About() {
       detail={profile.bio}
     >
       <div className="about__extras">
+        <div className="about__avatar">
+          <img src="/profile.jpg" alt={profile.name} />
+        </div>
+
         <div className="about__highlights">
           {profile.highlights.map((h) => (
             <div key={h.label} className="about__highlight">
