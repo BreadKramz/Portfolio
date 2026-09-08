@@ -1,4 +1,5 @@
 import { experience, education } from '../../data/timeline'
+import SectionHeading from '../SectionHeading/SectionHeading'
 import './Timeline.css'
 
 function TimelineItem({ entry, index }) {
@@ -19,18 +20,13 @@ function TimelineItem({ entry, index }) {
   )
 }
 
-function Timeline({ title, kicker, number, entries }) {
+function Timeline({ title, kicker, entries }) {
   return (
     <section className="content-section timeline">
-      <div className="section-heading">
-        <div className="section-heading__number">{number}</div>
-        <div>
-          <span className="section-heading__kicker">{kicker}</span>
-          <h2 className="section-heading__title">
-            {title}
-          </h2>
-        </div>
-      </div>
+      <SectionHeading
+        kicker={kicker}
+        title={title}
+      />
 
       <div className="timeline__list">
         {entries.map((entry, index) => (
@@ -48,7 +44,6 @@ function Timeline({ title, kicker, number, entries }) {
 export function Experience() {
   return (
     <Timeline
-      number="05"
       kicker="EXPERIENCE"
       title="Where I've worked"
       entries={experience}
@@ -59,7 +54,6 @@ export function Experience() {
 export function Education() {
   return (
     <Timeline
-      number="06"
       kicker="EDUCATION"
       title="Where I learned"
       entries={education}

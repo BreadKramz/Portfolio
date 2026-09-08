@@ -1,11 +1,10 @@
 import './ContentSection.css'
 import SectionHeading from '../SectionHeading/SectionHeading'
 
-function ContentSection({ id, number, kicker, title, accent, detail, children }) {
+function ContentSection({ id, kicker, title, accent, detail, children }) {
   return (
     <section id={id} className="content-section">
       <SectionHeading
-        number={number}
         kicker={kicker}
         title={title}
         accent={accent}

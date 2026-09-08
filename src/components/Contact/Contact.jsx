@@ -25,7 +25,6 @@ function Contact() {
   return (
     <ContentSection
       id="contact"
-      number="07"
       kicker="CONTACT"
       title="Let's build"
       accent="something."

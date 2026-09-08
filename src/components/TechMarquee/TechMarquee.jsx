@@ -12,7 +12,7 @@ function TechItem({ name, icon: Icon, className }) {
 }
 
 function TechMarquee({ items, reverse = false }) {
-  const duplicated = [...items, ...items]
+  const duplicated = [...items, ...items, ...items]
 
   return (
     <div className="marquee">

@@ -74,7 +74,6 @@ function Projects() {
   return (
     <ContentSection
       id="projects"
-      number="04"
       kicker="PROJECTS"
       title="Things I've"
       accent="built."

@@ -6,7 +6,6 @@ function About() {
   return (
     <ContentSection
       id="about"
-      number="03"
       kicker="ABOUT"
       title="Hi, I'm"
       accent={profile.name}

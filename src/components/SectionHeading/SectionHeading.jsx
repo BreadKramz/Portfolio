@@ -1,12 +1,8 @@
 import './SectionHeading.css'
 
-function SectionHeading({ number, kicker, title, accent }) {
+function SectionHeading({ kicker, title, accent }) {
   return (
     <div className="section-heading">
-      <div className="section-heading__number">
-        {number}
-      </div>
-
       <div>
         <span className="section-heading__kicker">
           {kicker}
