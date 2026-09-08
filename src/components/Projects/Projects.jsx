@@ -1,12 +1,56 @@
+import { useEffect, useRef } from 'react'
 import ContentSection from '../ContentSection/ContentSection'
 import { projects, projectStackIcons } from '../../data/projects'
 import './Projects.css'
 
+function useTilt(max = 6) {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if ('ontouchstart' in window) return
+
+    let raf = null
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect()
+      const px = (e.clientX - rect.left) / rect.width - 0.5
+      const py = (e.clientY - rect.top) / rect.height - 0.5
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        el.style.transform =
+          `perspective(900px) rotateY(${px * max}deg) rotateX(${-py * max}deg) translateY(-5px)`
+        el.style.transition = 'transform 0.12s ease-out'
+      })
+    }
+    const onLeave = () => {
+      cancelAnimationFrame(raf)
+      el.style.transform = ''
+      el.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)'
+    }
+    el.addEventListener('mousemove', onMove)
+    el.addEventListener('mouseleave', onLeave)
+    return () => {
+      el.removeEventListener('mousemove', onMove)
+      el.removeEventListener('mouseleave', onLeave)
+      cancelAnimationFrame(raf)
+    }
+  }, [max])
+
+  return ref
+}
+
 function ProjectCard({ project }) {
   const Icon = project.icon
+  const tilt = useTilt(6)
 
   return (
-    <article className={`project-card ${project.accent}`}>
+    <article
+      ref={tilt}
+      className={`project-card ${project.accent}`}
+      style={{ transformStyle: 'preserve-3d' }}
+    >
       <div className="project-card__header">
         <div className="project-card__icon">
           <Icon />

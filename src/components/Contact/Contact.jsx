@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import ContentSection from '../ContentSection/ContentSection'
 import { profile } from '../../data/profile'
 import './Contact.css'
@@ -21,7 +22,38 @@ const socialIcons = {
   ),
 }
 
+function useRipple() {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if ('ontouchstart' in window) return
+
+    const onClick = (e) => {
+      const rect = el.getBoundingClientRect()
+      const ripple = document.createElement('span')
+      const size = Math.max(rect.width, rect.height)
+      ripple.style.width = size + 'px'
+      ripple.style.height = size + 'px'
+      ripple.style.left = e.clientX - rect.left - size / 2 + 'px'
+      ripple.style.top = e.clientY - rect.top - size / 2 + 'px'
+      ripple.className = 'ripple'
+      el.appendChild(ripple)
+      setTimeout(() => ripple.remove(), 600)
+    }
+
+    el.addEventListener('click', onClick)
+    return () => el.removeEventListener('click', onClick)
+  }, [])
+
+  return ref
+}
+
 function Contact() {
+  const linkRef = useRipple()
+
   return (
     <ContentSection
       id="contact"
@@ -36,7 +68,11 @@ function Contact() {
           to say hi, my inbox is always open.
         </p>
 
-        <a href="mailto:realmarklesterj@gmail.com" className="contact__link">
+        <a
+          ref={linkRef}
+          href="mailto:realmarklesterj@gmail.com"
+          className="contact__link ripple-container"
+        >
           realmarklesterj@gmail.com
           <span>↗</span>
         </a>
@@ -46,7 +82,7 @@ function Contact() {
             <a
               key={social.name}
               href={social.href}
-              className="contact__social"
+              className="contact__social ripple-container"
               target={social.href.startsWith('http') ? '_blank' : undefined}
               rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               aria-label={social.name}

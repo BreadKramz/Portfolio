@@ -39,6 +39,11 @@
   animation: marquee-right 50s linear infinite;
 }
 
+/* Pause the marquee on hover — a nice game-like feel */
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
 .marquee__item {
   position: relative;
   display: flex;

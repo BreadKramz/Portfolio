@@ -1,0 +1,85 @@
+/* =========================
+   GAME CURSOR
+   ========================= */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #646cff;
+  box-shadow: 0 0 10px #646cff, 0 0 20px rgba(100, 108, 255, 0.6);
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(100, 108, 255, 0.5);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  margin: -14px 0 0 -14px;
+}
+
+.cursor-dot:hover ~ .cursor-ring,
+.cursor-ring:hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(100, 108, 255, 0.9);
+  margin: -26px 0 0 -26px;
+}
+
+/* Hide the native cursor when the game cursor is active */
+body.game-cursor,
+body.game-cursor * {
+  cursor: none !important;
+}
+
+/* Click burst */
+.cursor-burst {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #646cff;
+  box-shadow: 0 0 0 0 rgba(100, 108, 255, 0.7);
+  transform: translate(-50%, -50%);
+  z-index: 9997;
+  pointer-events: none;
+  animation: cursor-burst 0.7s ease-out forwards;
+}
+
+@keyframes cursor-burst {
+  0% {
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 0 0 rgba(100, 108, 255, 0.7);
+    opacity: 1;
+  }
+  100% {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 0 0 24px rgba(100, 108, 255, 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-burst {
+    display: none !important;
+  }
+}

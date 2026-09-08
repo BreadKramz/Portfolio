@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
-import './SectionHeading.css'
 
-function useReveal() {
+// Reveals an element when it scrolls into view (fade + slide up).
+// Respects prefers-reduced-motion.
+export default function useReveal() {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -34,29 +35,3 @@ function useReveal() {
 
   return ref
 }
-
-function SectionHeading({ kicker, title, accent }) {
-  const reveal = useReveal()
-
-  return (
-    <div ref={reveal} className="section-heading">
-      <div>
-        <span className="section-heading__kicker">
-          {kicker}
-        </span>
-
-        <h2 className="section-heading__title">
-          {title}
-          {accent && (
-            <>
-              <br />
-              <span>{accent}</span>
-            </>
-          )}
-        </h2>
-      </div>
-    </div>
-  )
-}
-
-export default SectionHeading
