@@ -41,7 +41,7 @@ function useTilt(max = 6) {
   return ref
 }
 
-function About() {
+function About({ ...rest }) {
   return (
     <ContentSection
       id="about"
@@ -49,6 +49,7 @@ function About() {
       title="Hi, I'm"
       accent={profile.name}
       detail={profile.bio}
+      {...rest}
     >
       <div className="about__extras">
         <div className="about__avatar">

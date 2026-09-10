@@ -57,43 +57,47 @@ function TimelineItem({ entry, index }) {
   )
 }
 
-function Timeline({ title, kicker, entries }) {
+function Timeline({ title, kicker, entries, ...rest }) {
   return (
-    <section className="content-section timeline">
-      <SectionHeading
-        kicker={kicker}
-        title={title}
-      />
+    <section className="content-section timeline" {...rest}>
+      <div className="content-section__body">
+        <SectionHeading
+          kicker={kicker}
+          title={title}
+        />
 
-      <div className="timeline__list">
-        {entries.map((entry, index) => (
-          <TimelineItem
-            key={`${entry.role}-${entry.org}`}
-            entry={entry}
-            index={index < entries.length - 1 ? index : null}
-          />
-        ))}
+        <div className="timeline__list">
+          {entries.map((entry, index) => (
+            <TimelineItem
+              key={`${entry.role}-${entry.org}`}
+              entry={entry}
+              index={index < entries.length - 1 ? index : null}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
 }
 
-export function Experience() {
+export function Experience({ ...rest }) {
   return (
     <Timeline
       kicker="EXPERIENCE"
       title="Where I've worked"
       entries={experience}
+      {...rest}
     />
   )
 }
 
-export function Education() {
+export function Education({ ...rest }) {
   return (
     <Timeline
       kicker="EDUCATION"
       title="Where I learned"
       entries={education}
+      {...rest}
     />
   )
 }

@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { profile } from '../../data/profile'
+import TechMarquee from '../TechMarquee/TechMarquee'
+import { languages } from '../../data/languages'
+import { technologies } from '../../data/technologies'
 import './Hero.css'
 
 function useRipple() {
@@ -31,21 +34,26 @@ function useRipple() {
   return ref
 }
 
-function Hero() {
+function Hero({ ...rest }) {
   const primaryRef = useRipple()
   const secondaryRef = useRipple()
 
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" {...rest}>
+      <TechMarquee items={languages} />
+
       <div className="hero__content">
+        <div className="hero__avatar">
+          <img src="/profile.jpg" alt={profile.name} />
+        </div>
+
         <div className="hero__label">
           <span></span>
           PORTFOLIO / 2026
         </div>
 
         <h1 className="hero__title">
-          {profile.handle}
-          <span className="hero__title-dot">.</span>
+          {profile.name}
         </h1>
 
         <p className="hero__subtitle">
@@ -84,6 +92,8 @@ function Hero() {
           <div className="hero__scroll-line"></div>
         </div>
       </div>
+
+      <TechMarquee items={technologies} reverse />
     </section>
   )
 }

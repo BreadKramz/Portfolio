@@ -1,5 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+:root {
+  --bg: #080808;
+  --bg-alt: #0a0a0a;
+  --surface: rgba(15, 15, 15, 0.7);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+  --text-muted: #a0a0a0;
+  --text-dim: #555555;
+  --accent: #646cff;
+  --accent-hover: #7f88ff;
+  --green: #3ecf8e;
+  --yellow: #f7c948;
+  --transition: 0.25s ease;
+}
 
 /* =========================
    RIPPLE (click feedback)
@@ -22,7 +37,6 @@
   }
 }
 
-/* Make ripple containers overflow-hidden so the ripple stays contained */
 .ripple-container {
   position: relative;
   overflow: hidden;
@@ -47,7 +61,6 @@
   }
 }
 
-
 /* =========================
    RESET
    ========================= */
@@ -55,29 +68,15 @@
 * {
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
 }
 
-
-/* =========================
-   HTML
-========================= */
-
 html {
   scroll-behavior: smooth;
-
   scrollbar-width: thin;
-
-  scrollbar-color:
-    #3a3a3a
-    #080808;
+  scrollbar-color: #3a3a3a #080808;
+  font-size: 16px;
 }
-
-
-/* =========================
-   WEBKIT SCROLLBAR
-========================= */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -89,161 +88,70 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #2f2f2f;
-
   border-radius: 10px;
-
-  border:
-    2px solid #080808;
+  border: 2px solid #080808;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
 
-
-/* =========================
-   BODY
-========================= */
-
 body {
-
-  font-family:
-    'Inter',
-    sans-serif;
-
-  background:
-    #080808;
-
-  color:
-    #ffffff;
-
-  min-height:
-    100vh;
-
-  overflow-x:
-    hidden;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-
-/* =========================
-   GRID BACKGROUND
-========================= */
+body.game-cursor {
+  background-attachment: fixed;
+}
 
 body::before {
-
   content: '';
-
   position: fixed;
-
   inset: 0;
-
-  pointer-events:
-    none;
-
+  pointer-events: none;
   background-image:
-
-    linear-gradient(
-      rgba(
-        255,
-        255,
-        255,
-        0.035
-      ) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(
-        255,
-        255,
-        255,
-        0.035
-      ) 1px,
-      transparent 1px
-    );
-
-  background-size:
-    50px 50px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black 0%,
-      transparent 80%
-    );
-
-  -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      black 0%,
-      transparent 80%
-    );
-
-  z-index:
-    -2;
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  z-index: -2;
 }
-
-
-/* =========================
-   SOFT CENTER GLOW
-========================= */
 
 body::after {
-
   content: '';
-
   position: fixed;
-
-  width:
-    700px;
-
-  height:
-    700px;
-
-  top:
-    -250px;
-
-  left:
-    50%;
-
-  transform:
-    translateX(-50%);
-
-  background:
-    radial-gradient(
-      circle,
-
-      rgba(
-        100,
-        100,
-        255,
-        0.08
-      ) 0%,
-
-      rgba(
-        100,
-        100,
-        255,
-        0.035
-      ) 35%,
-
-      transparent 70%
-    );
-
-  pointer-events:
-    none;
-
-  z-index:
-    -1;
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(100, 100, 255, 0.08) 0%,
+    rgba(100, 100, 255, 0.035) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
-
-/* =========================
-   ROOT
-========================= */
-
 #root {
-  min-height:
-    100vh;
+  min-height: 100vh;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

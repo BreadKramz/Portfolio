@@ -51,7 +51,7 @@ function useRipple() {
   return ref
 }
 
-function Contact() {
+function Contact({ ...rest }) {
   const linkRef = useRipple()
 
   return (
@@ -60,6 +60,7 @@ function Contact() {
       kicker="CONTACT"
       title="Let's build"
       accent="something."
+      {...rest}
     >
       <div className="contact__body">
         <p className="contact__intro">

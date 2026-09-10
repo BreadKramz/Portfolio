@@ -3,9 +3,9 @@ import TechMarquee from '../TechMarquee/TechMarquee'
 import { languages } from '../../data/languages'
 import { technologies } from '../../data/technologies'
 
-function TechSection() {
+function TechSection({ ...rest }) {
   return (
-    <section className="tech-section">
+    <section className="tech-section" {...rest}>
       <TechMarquee items={languages} />
       <TechMarquee items={technologies} reverse />
     </section>

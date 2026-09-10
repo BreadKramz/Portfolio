@@ -114,13 +114,14 @@ function ProjectCard({ project }) {
   )
 }
 
-function Projects() {
+function Projects({ ...rest }) {
   return (
     <ContentSection
       id="projects"
       kicker="PROJECTS"
       title="Things I've"
       accent="built."
+      {...rest}
     >
       <div className="projects__grid">
         {projects.map((project) => (
